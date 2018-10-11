@@ -1,0 +1,18 @@
+<h1> Edit your workout! </h1>
+
+<form action='/updateCall'>
+	Exercise:
+	<input type="text" name="name" id="name" value="{{results.name}}"> <br>
+	Reps:
+	<input type="number" name="reps" id="inReps" value="{{results.reps}}"> <br>
+	Weight:
+	<input type="number" name="weight" id="inWeight" value="{{results.weight}}"> <br>
+	Date:
+	<input type="text" name="date" id="inDate" value="{{results.date}}"> <br>
+	Unit:
+	<input id="inUnit" type="radio" name="unit" value="lb">lb</label>
+	<input id="inUnit" type="radio" name="unit" value="kg">kg</label><br>
+
+	<input type="hidden" name="id" value={{results.id}}>
+	<input type="submit" name="editExercise" value="Edit" id="editExercise">
+</form>

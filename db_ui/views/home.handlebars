@@ -1,0 +1,48 @@
+<h1>Your Workout Tracker!:</h1>
+
+<form id = addExercise>
+	<legend> Add an exercise you completed: </legend>
+	Exercise:
+	<input id="name" type="text" name="name"> <br>
+	Reps:
+	<input id="inReps" type="number" name="reps"> <br>
+	Weight:
+	<input id="inWeight" type="number" name="weight"> <br>
+	Date:
+	<input id="inDate" type="text" name="date"> <br>
+	Unit:
+  	<input id="inUnit" type="radio" name="unit" value="lb">lbs</label>
+  	<input id="inUnit" type="radio" name="unit" value="kg">kg</label><br>
+
+  <input type="submit" id="subWorkout" name="subWorkout" value="Submit">
+ </form>
+
+<br><br>
+
+<table id="table">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Reps</th>
+			<th>Weight</th>
+			<th>Date</th>
+			<th>Unit</th>
+		</tr>
+	</thead>
+	<tbody id = "table_body">
+	{{#if results}}
+		{{#each results}}
+		<tr>
+			<td>{{this.name}}</td>
+			<td>{{this.reps}}</td>
+			<td>{{this.weight}}</td>
+			<td>{{this.date}}</td>
+			<td>{{this.unit}}</td>
+			<td><a href ="/updateTable?id={{this.id}}"><input type="button" value="Edit"></a></td>
+      <td><button onclick="delete_submit({{id}})">Delete</button></td>
+		</tr>
+		{{/each}}
+	{{/if}}
+	</tbody>
+</table>
+<script src="/js/SQL_UI.js"></script>
